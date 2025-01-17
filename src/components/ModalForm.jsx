@@ -13,13 +13,13 @@ export default function ModalForm({ isOpen, onClose, mode, onSubmit, item }) {
         setEmail(item.email);
         setUsername(item.username);
         setTelephone(item.telephone);
-        setStatus(item.status);  // Ensure the status is properly set (either 'Active' or 'Inactive')
+        setStatus(item.status); 
       } else {
         setName('');
         setEmail('');
         setUsername('');
         setTelephone('');
-        setStatus('');  // Reset the status on modal close
+        setStatus('');  
       }
     }, [mode, item, isOpen]);
 
@@ -29,13 +29,13 @@ export default function ModalForm({ isOpen, onClose, mode, onSubmit, item }) {
       if (name === 'name') setName(value);
       if (name === 'email') setEmail(value);
       if (name === 'username') setUsername(value);
-      if (name === 'status') setStatus(value);  // Handle status change here
+      if (name === 'status') setStatus(value); 
     };
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      const formData = { name, email, username, telephone, status };  // Collect all data
-      onSubmit(formData);  // Send formData to parent component for submission
+      const formData = { name, email, username, telephone, status }; 
+      onSubmit(formData);  
     };
 
     return (
